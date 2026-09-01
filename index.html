@@ -1,1 +1,347 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analytics Workshop Resource Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #eff6ff;
+      --accent: #2563eb;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --radius: 12px;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sarabun', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+      padding: 32px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 28px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .badge-session1 {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .badge-session2 {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .btn-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-light);
+    }
+
+    .btn-discussion {
+      background-color: #059669;
+      color: white;
+    }
+
+    .btn-discussion:hover {
+      background-color: #047857;
+    }
+
+    .group-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .group-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      border-top: 4px solid var(--accent);
+    }
+
+    .group-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .dataset-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      min-height: 40px;
+    }
+
+    .version-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Data Analytics & Excel Workshop</h1>
+      <p>ศูนย์รวมเอกสารประกอบการสอน ไฟล์ปฏิบัติการ และชุดข้อมูลงานกลุ่ม</p>
+    </header>
+
+    <h2 class="section-title">📚 เอกสารการสอนและแบบฝึกหัด (Course Materials & Labs)</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Session 1: Data Preparation & Formulas</div>
+          <span class="badge badge-session1">ครั้งที่ 1</span>
+        </div>
+        <p class="dataset-desc">ทบทวนการทำความสะอาดข้อมูล, การใช้ฟังก์ชันข้อความ และสูตรคำนวณพื้นฐาน</p>
+        <div class="btn-list">
+          <a id="slide-s1" href="#" target="_blank" class="btn btn-outline">📥 ดาวน์โหลดสไลด์ Session 1</a>
+          <a id="lab-s1" href="#" target="_blank" class="btn btn-primary">📊 ไฟล์แบบฝึกหัด Lab 1 (Dirty Data & Formulas)</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Session 2: Pivot Table & Mini Dashboard</div>
+          <span class="badge badge-session2">ครั้งที่ 2</span>
+        </div>
+        <p class="dataset-desc">การสรุปข้อมูลเชิงพรรณนาด้วย Pivot Table และการสร้าง Interactive Mini Dashboard</p>
+        <div class="btn-list">
+          <a id="slide-s2" href="#" target="_blank" class="btn btn-outline">📥 ดาวน์โหลดสไลด์ Session 2</a>
+          <a id="lab-s2" href="#" target="_blank" class="btn btn-primary">📊 ไฟล์แบบฝึกหัด Lab 2 (Pivot & Dashboard)</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">💬 พื้นที่อภิปรายและระดมความคิดเห็น</h2>
+    <div class="card" style="border-left: 5px solid #059669;">
+      <div class="card-header">
+        <div>
+          <div class="card-title">กระดานสนทนา Canvas Discussion / Padlet</div>
+          <p class="dataset-desc" style="margin-bottom: 0;">สำหรับให้นักศึกษาแต่ละกลุ่มร่วมกันตั้งประเด็น 3 คำถามสำคัญ และแปะแผนการวิเคราะห์ข้อมูล</p>
+        </div>
+      </div>
+      <div style="margin-top: 14px;">
+        <a id="link-discussion" href="#" target="_blank" class="btn btn-discussion" style="width: 100%;">🚀 เข้าสู่กระดานอภิปรายกลุ่ม (Canvas Board)</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">👥 ชุดข้อมูลประจำกลุ่ม (Group Datasets)</h2>
+    <div class="group-grid" id="group-dataset-container">
+      </div>
+
+    <footer>
+      <p>Data Analytics Workshop | จัดการข้อมูลให้เป็นระบบ สื่อสาร Insight ให้ตรงจุด</p>
+    </footer>
+  </div>
+
+  <script>
+    /* =========================================================================
+       CONFIGURATION AREA: แก้ไขลิงก์ไฟล์และรายละเอียดต่างๆ ได้ที่ส่วนนี้เลยครับ
+       ========================================================================= */
+    const courseConfig = {
+      // ลิงก์สไลด์และแบบฝึกหัดทั่วไป
+      slides: {
+        session1: "https://docs.google.com/presentation/d/your-session1-slide-url",
+        session2: "https://docs.google.com/presentation/d/your-session2-slide-url"
+      },
+      labs: {
+        session1: "https://docs.google.com/spreadsheets/d/your-session1-lab-url",
+        session2: "https://docs.google.com/spreadsheets/d/your-session2-lab-url"
+      },
+      // ลิงก์ห้อง Canvas Discussion หรือกระดานระดมความคิด
+      discussionBoardUrl: "https://canvas.instructure.com/courses/your-discussion-url",
+
+      // ชุดข้อมูลทั้ง 4 กลุ่ม (มี Version 1: 50 rows และ Version 2: Full dataset)
+      groups: [
+        {
+          groupName: "กลุ่มที่ 1: Learning Platform",
+          description: "ข้อมูลการเข้าใช้งานระบบเรียนออนไลน์ ชั่วโมงเรียน และอัตราการเรียนจบ",
+          v1_url: "https://docs.google.com/spreadsheets/d/group1-sample-v1",
+          v2_url: "https://docs.google.com/spreadsheets/d/group1-full-v2"
+        },
+        {
+          groupName: "กลุ่มที่ 2: GenAI Adoption Survey",
+          description: "ผลสำรวจการนำ Generative AI ไปประยุกต์ใช้ในองค์กรและปัญหาที่พบ",
+          v1_url: "https://docs.google.com/spreadsheets/d/group2-sample-v1",
+          v2_url: "https://docs.google.com/spreadsheets/d/group2-full-v2"
+        },
+        {
+          groupName: "กลุ่มที่ 3: Event & Registration",
+          description: "ข้อมูลผู้ลงทะเบียนเข้าร่วมกิจกรรมเทียบกับการเช็คอินเข้าร่วมงานจริง",
+          v1_url: "https://docs.google.com/spreadsheets/d/group3-sample-v1",
+          v2_url: "https://docs.google.com/spreadsheets/d/group3-full-v2"
+        },
+        {
+          groupName: "กลุ่มที่ 4: Service Request Logs",
+          description: "บันทึกการแจ้งปัญหาของผู้ใช้งาน ระดับความเร่งด่วน และสถานะการแก้ไข",
+          v1_url: "https://docs.google.com/spreadsheets/d/group4-sample-v1",
+          v2_url: "https://docs.google.com/spreadsheets/d/group4-full-v2"
+        }
+      ]
+    };
+
+    /* =========================================================================
+       DOM RENDERING LOGIC (ไม่ต้องแก้ไขส่วนนี้)
+       ========================================================================= */
+    document.addEventListener("DOMContentLoaded", () => {
+      // ผูกลิงก์ Session 1 & 2
+      document.getElementById("slide-s1").href = courseConfig.slides.session1;
+      document.getElementById("slide-s2").href = courseConfig.slides.session2;
+      document.getElementById("lab-s1").href = courseConfig.labs.session1;
+      document.getElementById("lab-s2").href = courseConfig.labs.session2;
+      document.getElementById("link-discussion").href = courseConfig.discussionBoardUrl;
+
+      // Render การ์ดของแต่ละกลุ่ม
+      const container = document.getElementById("group-dataset-container");
+      container.innerHTML = courseConfig.groups.map(g => `
+        <div class="group-card">
+          <h3>${g.groupName}</h3>
+          <p class="dataset-desc">${g.description}</p>
+          <div class="version-links">
+            <a href="${g.v1_url}" target="_blank" class="btn btn-outline" style="font-size: 0.85rem; padding: 6px 10px;">
+              📁 ครั้งที่ 1 (ตัวอย่าง 50 แถว)
+            </a>
+            <a href="${g.v2_url}" target="_blank" class="btn btn-primary" style="font-size: 0.85rem; padding: 6px 10px;">
+              📦 ครั้งที่ 2 (ชุดข้อมูลเต็ม)
+            </a>
+          </div>
+        </div>
+      `).join("");
+    });
+  </script>
+</body>
+</html>
